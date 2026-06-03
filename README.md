@@ -18,13 +18,24 @@ npm install
 npm run dev
 ```
 
+Open the Vite URL printed in your terminal, usually `http://localhost:5173/`.
+
+## Preview production locally
+
+```bash
+npm run build
+npm run preview
+```
+
+Open the preview URL printed in your terminal, usually `http://localhost:4173/`.
+
 ## Build for download/deployment
 
 ```bash
 npm run build
 ```
 
-The production build is emitted to `dist/` and can be deployed to Vercel, Netlify, Cloudflare Pages, or any static host.
+The production build is emitted to `dist/` and can be deployed to Vercel, Netlify, Cloudflare Pages, or any static host. See [`DEPLOYMENT.md`](./DEPLOYMENT.md) for step-by-step live deployment instructions.
 
 ## Notes
 
