@@ -885,3 +885,118 @@ select {
   padding: 14px;
   min-height: 80px;
 }
+
+/* Cengage AI battle card */
+.battle-page {
+  --ink: #172033;
+  --muted: #5c687a;
+  --line: #dce5f1;
+  --paper: #ffffff;
+  --soft: #f4f7fb;
+  --brand: #165d8f;
+  --brand2: #0f766e;
+  min-height: 100svh;
+  color: var(--ink);
+  background: linear-gradient(180deg, #eef5fb 0%, #f8fafc 34%, #ffffff 100%);
+  padding: 40px clamp(18px, 4vw, 56px) 72px;
+}
+
+.battle-hero,
+.battle-card {
+  max-width: 1180px;
+  margin: 0 auto 22px;
+}
+
+.battle-hero {
+  padding: clamp(34px, 6vw, 72px);
+  border: 1px solid rgba(22, 93, 143, 0.18);
+  border-radius: 30px;
+  background: radial-gradient(circle at top right, rgba(15, 118, 110, 0.16), transparent 34%), linear-gradient(135deg, #ffffff, #edf6fb);
+  box-shadow: 0 24px 70px rgba(23, 32, 51, 0.12);
+}
+
+.battle-hero h1 {
+  max-width: 860px;
+  margin: 12px 0 12px;
+  font-size: clamp(42px, 7vw, 78px);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+}
+
+.eyebrow {
+  color: var(--brand2);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: clamp(18px, 2.4vw, 24px);
+  line-height: 1.35;
+}
+
+.hero-callout,
+.callout,
+.mini-callout {
+  border-left: 5px solid var(--brand2);
+  background: #e9f7f4;
+  color: #0f3f3a;
+  border-radius: 18px;
+  padding: 20px 22px;
+  font-size: clamp(20px, 3vw, 31px);
+  font-weight: 800;
+  margin-top: 28px;
+}
+
+.battle-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: clamp(24px, 4vw, 38px);
+  box-shadow: 0 14px 38px rgba(23, 32, 51, 0.07);
+}
+
+.battle-card h2 {
+  color: var(--brand);
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.battle-card h3 { margin: 18px 0 8px; font-size: 18px; color: #24324a; }
+.battle-card p, .battle-card li, .battle-card td { color: var(--muted); font-size: 15.5px; line-height: 1.58; }
+.battle-card ul, .battle-card ol { padding-left: 20px; }
+.talk-track { font-size: 20px !important; color: #334155 !important; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; }
+.battle-card table { width: 100%; border-collapse: collapse; min-width: 980px; }
+.battle-card th { background: #123d5c; color: #fff; text-align: left; padding: 14px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+.battle-card td { padding: 14px; border-top: 1px solid var(--line); vertical-align: top; }
+.battle-card tr:nth-child(even) td { background: var(--soft); }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .75fr); gap: 24px; align-items: start; }
+.check-list { columns: 2; list-style: none; padding-left: 0 !important; }
+.check-list li { break-inside: avoid; margin: 0 0 10px; padding-left: 28px; position: relative; }
+.check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--brand2); font-weight: 900; }
+.objection { background: #fff7ed; border: 1px solid #fed7aa; color: #7c2d12; border-radius: 16px; padding: 16px; margin-bottom: 14px; }
+.grid-3, .persona-grid, .objection-grid, .spiced, .interview-grid { display: grid; gap: 18px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.persona-grid { grid-template-columns: repeat(2, 1fr); }
+.objection-grid { grid-template-columns: repeat(2, 1fr); }
+.spiced { grid-template-columns: repeat(5, 1fr); }
+.interview-grid { grid-template-columns: repeat(4, 1fr); }
+.persona, .qa, .spiced > div, .interview-grid > div { background: var(--soft); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+.qa h3 { color: #172033; margin-top: 0; }
+.one-liners li { margin-bottom: 10px; font-weight: 700; color: #24324a; }
+
+@media (max-width: 900px) {
+  .split, .grid-3, .persona-grid, .objection-grid, .spiced, .interview-grid { grid-template-columns: 1fr; }
+  .check-list { columns: 1; }
+}
+
+@media print {
+  body::before { display: none; }
+  .battle-page { background: #fff; padding: 0; }
+  .battle-hero, .battle-card { box-shadow: none; break-inside: avoid; }
+}
